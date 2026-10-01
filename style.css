@@ -49,36 +49,44 @@ body {
 
 .search-box {
     flex: 1;
-    max-width: 600px;
-
+    max-width: 720px;
+    height: 50px;
     display: flex;
-    height: 42px;
+    align-items: center;
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 0 30px;
 }
 
 .search-box input {
     flex: 1;
-
+    height: 100%;
     border: none;
     outline: none;
+    padding: 0 22px;
+    font-size: 15px;
+    color: #333;
+}
 
-    padding: 0 18px;
-
-    font-size: 14px;
-
-    border-radius: 25px 0 0 25px;
+.search-box input::placeholder{
+    color: #777;
 }
 
 .search-box button {
-    width: 50px;
-
+    width: 60px;
+    height: 100%;
     border: none;
     cursor: pointer;
-
     background-color: #ffc220;
-
-    border-radius: 0 25px 25px 0;
-
-    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    
+}
+.search-box button:hover{
+    background-color: #ffb700;
 }
 
 /* ---------- RIGHT ICONS ---------- */
@@ -106,9 +114,10 @@ body {
     font-size: 18px;
 }
 
-/* =====================================================
-   NAVIGATION MENU
-===================================================== */
+
+/* ==============================
+   NAV MENU
+================================ */
 
 .nav-menu {
     min-height: 45px;
@@ -118,109 +127,56 @@ body {
     display: flex;
     align-items: center;
 
-    gap: 28px;
+    gap: 20px;
 
     border-top: 1px solid rgba(255,255,255,0.2);
 }
 
-.nav-menu a {
-    color: white;
 
-    text-decoration: none;
-
-    font-size: 14px;
-    font-weight: 500;
-
-    display: flex;
-    align-items: center;
-    gap: 7px;
-
-    white-space: nowrap;
-}
-
-.nav-menu a:hover {
-    text-decoration: underline;
-}
-
-.nav-menu i {
-    font-size: 15px;
-}
-
-/* =========================
+/* ==============================
    DEPARTMENTS
-========================= */
+================================ */
 
 .department-dropdown {
-    position: relative;
+    flex-shrink: 0;
 }
 
 .department-btn {
-    background: transparent;
+    background: none;
     border: none;
     color: white;
-
+    font-family: inherit;
     font-size: 14px;
     cursor: pointer;
-
     display: flex;
     align-items: center;
     gap: 7px;
-
     padding: 12px 0;
-}
-
-.department-btn:hover {
-    text-decoration: underline;
 }
 
 .department-btn .arrow {
     font-size: 10px;
 }
 
-
-/* IMPORTANT:
-   Hidden initially
-*/
+/* ==============================
+   DEPARTMENT ITEMS - DESKTOP
+================================ */
 
 .department-list {
-    display: none;
-
-    position: absolute;
-    top: 100%;
-    left: 0;
-
-    width: 190px;
-
-    background-color: #0071ce;
-
-    padding: 5px 0;
-
-    z-index: 9999;
-
-    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-}
-
-
-/* Only after click */
-
-.department-list.show {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 25px;
 }
 
 .department-list a {
-    display: block;
-
     color: white;
     text-decoration: none;
-
-    padding: 8px 18px;
-
     font-size: 14px;
+    white-space: nowrap;
 }
 
 .department-list a:hover {
-    background-color: #005da8;
+    text-decoration: underline;
 }
 
 /* =====================================================
@@ -230,7 +186,6 @@ body {
 .hero {
     width: 100%;
     height: 330px;
-
     background: linear-gradient(
         90deg,
         #dff5ff,
@@ -238,7 +193,6 @@ body {
     );
 
     position: relative;
-
     overflow: hidden;
 }
 
@@ -248,9 +202,7 @@ body {
 .hero-content {
     width: 90%;
     height: 100%;
-
     margin: auto;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -266,39 +218,28 @@ body {
 
 .small-title {
     color: #0875c9;
-
     font-size: 14px;
-
     font-weight: bold;
-
     margin-bottom: 10px;
 }
 
 .hero-text h1 {
     color: #333;
-
     font-size: 32px;
-
     line-height: 1.2;
-
     margin-bottom: 12px;
 }
 
 .hero-price {
     color: #0875c9;
-
     font-size: 20px;
-
     font-weight: bold;
-
     margin-bottom: 8px;
 }
 
 .hero-offer {
     color: #555;
-
     font-size: 13px;
-
     margin-bottom: 18px;
 }
 
@@ -307,19 +248,12 @@ body {
 
 .shop-btn {
     background: #0875c9;
-
     color: white;
-
     border: none;
-
     padding: 12px 28px;
-
     font-size: 14px;
-
     font-weight: bold;
-
     cursor: pointer;
-
     border-radius: 3px;
 }
 
@@ -614,45 +548,31 @@ body {
 
 .product-info p {
     color: #555;
-
     font-size: 12px;
-
     line-height: 1.4;
-
     height: 35px;
-
     margin-bottom: 15px;
 }
 
 .product-bottom {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 }
 
 .product-price {
     color: #0878c9;
-
     font-size: 14px;
-
     font-weight: bold;
 }
 
 .product-bottom button {
     border: none;
-
     background-color: #006bb6;
-
     color: white;
-
     padding: 8px 18px;
-
     font-size: 10px;
-
     font-weight: bold;
-
     cursor: pointer;
 }
 
@@ -667,73 +587,55 @@ body {
 
 .latest-launches {
     width: 90%;
-
     margin: 30px auto 0;
 }
 
 .latest-launches h2 {
     color: #0878c9;
-
     font-size: 22px;
-
     margin-bottom: 20px;
 }
 
 .launch-container {
     display: flex;
-
     justify-content: space-between;
-
     align-items: flex-start;
 }
 
 .launch-card {
     width: 14%;
-
     text-align: center;
 }
 
 .launch-image {
     width: 100%;
-
     height: 120px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 }
 
 .launch-image img {
     width: 80px;
-
     height: 105px;
-
     object-fit: contain;
 }
 
 .launch-card h3 {
     color: #333;
-
     font-size: 12px;
-
     margin-top: 12px;
-
     margin-bottom: 5px;
 }
 
 .launch-card p {
     color: #0878c9;
-
     font-size: 11px;
-
     margin-bottom: 4px;
 }
 
 .launch-card span {
     color: #0878c9;
-
     font-size: 10px;
 }
 
@@ -744,65 +646,49 @@ body {
 
 .trending-offers {
     width: 90%;
-
     margin: 30px auto 0;
 }
 
 .trending-offers h2 {
     color: #0878c9;
-
     font-size: 22px;
-
     margin-bottom: 20px;
 }
 
 .trending-container {
     display: flex;
-
     justify-content: space-between;
-
     align-items: flex-start;
 }
 
 .trending-card {
     width: 14%;
-
     text-align: center;
 }
 
 .trending-image {
     width: 100%;
-
     height: 120px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 }
 
 .trending-image img {
     width: 100px;
-
     height: 100px;
-
     object-fit: contain;
 }
 
 .trending-card h3 {
     color: #333;
-
     font-size: 12px;
-
     margin-top: 8px;
-
     margin-bottom: 5px;
 }
 
 .trending-card p {
     color: #0878c9;
-
     font-size: 11px;
 }
 
@@ -813,11 +699,8 @@ body {
 
 .discover-section {
     width: 100%;
-
     padding: 40px 60px;
-
     box-sizing: border-box;
-
     background-color: #fff;
 }
 
@@ -826,25 +709,19 @@ body {
 
 .discover-title {
     text-align: center;
-
     margin-bottom: 25px;
 }
 
 .discover-title h2 {
     margin: 0;
-
     color: #0071ce;
-
     font-size: 24px;
-
     font-weight: 600;
 }
 
 .discover-title p {
     margin-top: 6px;
-
     color: #777;
-
     font-size: 13px;
 }
 
@@ -853,11 +730,8 @@ body {
 
 .discover-container {
     width: 100%;
-
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 25px;
 }
 
@@ -866,19 +740,14 @@ body {
 
 .discover-card {
     background-color: white;
-
     border: 1px solid #e5e5e5;
-
     overflow: hidden;
-
     transition: 0.3s;
-
     cursor: pointer;
 }
 
 .discover-card:hover {
     transform: translateY(-5px);
-
     box-shadow:
         0 5px 15px rgba(0, 0, 0, 0.12);
 }
@@ -888,21 +757,15 @@ body {
 
 .discover-image {
     width: 100%;
-
     height: 190px;
-
     overflow: hidden;
 }
 
 .discover-image img {
     width: 100%;
-
     height: 100%;
-
     object-fit: cover;
-
     display: block;
-
     transition: 0.3s;
 }
 
@@ -919,29 +782,21 @@ body {
 
 .discover-content h3 {
     margin: 0 0 7px;
-
     color: #0071ce;
-
     font-size: 16px;
 }
 
 .discover-content p {
     margin: 0 0 10px;
-
     color: #555;
-
     font-size: 12px;
-
     line-height: 1.5;
 }
 
 .discover-content a {
     color: #0071ce;
-
     text-decoration: none;
-
     font-size: 12px;
-
     font-weight: 600;
 }
 
@@ -953,17 +808,12 @@ body {
 /* =====================================================
    FOOTER
 ===================================================== */
-
 .footer {
     width: 100%;
-
     background-color: #0071ce;
-
     color: white;
-
     margin-top: 50px;
 }
-
 
 /* =====================================================
    NEWSLETTER
@@ -971,13 +821,9 @@ body {
 
 .newsletter {
     padding: 30px 70px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
@@ -1271,9 +1117,8 @@ body {
 
 @media (max-width: 576px) {
 
-    .top-header {
+        .top-header {
         flex-direction: column;
-
         align-items: flex-start;
 
         padding: 10px 20px;
@@ -1283,19 +1128,31 @@ body {
         width: 100%;
     }
 
-    .search-box {
-        width: 100%;
+      .search-box input::placeholder {
+        font-size: 13px;
+    }
 
-        order: 2;
+    .search-box {
+        height: 40px;
+        margin: 8px 0;
+    }
+
+    .search-btn {
+        width: 48px;
     }
 
     .nav-icons {
-        justify-content: space-between;
-
         width: 100%;
+
+        justify-content: space-between;
 
         order: 3;
     }
+
+
+    /* =========================
+       MOBILE NAV
+    ========================= */
 
     .nav-menu {
         flex-direction: column;
@@ -1310,7 +1167,7 @@ body {
     }
 
 
-    /* Department mobile */
+    /* Departments */
 
     .department-dropdown {
         width: 100%;
@@ -1322,19 +1179,40 @@ body {
         padding: 10px 0;
     }
 
+
+    /* =========================
+       HIDE DEPARTMENT ITEMS
+       INITIALLY
+    ========================= */
+
     .department-list {
-        position: static;
+        display: none;
 
         width: 100%;
 
-        box-shadow: none;
+        flex-direction: column;
 
-        padding: 0 0 5px;
+        align-items: flex-start;
+
+        gap: 0;
+
+        padding: 0 0 8px;
     }
+
+
+    .department-list.show {
+        display: flex;
+    }
+
 
     .department-list a {
+        width: 100%;
+
         padding: 8px 25px;
+
+        font-size: 14px;
     }
+
 
 
     /* Hero */
