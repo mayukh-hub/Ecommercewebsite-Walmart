@@ -51,50 +51,32 @@
 
     </div>
 
+<div class="nav-menu">
 
-    <!-- Navigation Menu -->
-    <div class="nav-menu">
+    <div class="department-dropdown">
 
-        <a href="#">
+        <button class="department-btn" id="departmentBtn">
             <i class="fa-solid fa-bars"></i>
-            Departments
-        </a>
+            <span>Departments</span>
+            <i class="fa-solid fa-chevron-down arrow"></i>
+        </button>
 
-        <a href="#">
-            <i class="fa-solid fa-truck"></i>
-            Services
-        </a>
+        <div class="department-list" id="departmentList">
 
-        <a href="#">
-            Grocery
-        </a>
+            <a href="#">Services</a>
+            <a href="#">Grocery</a>
+            <a href="#">Electronics</a>
+            <a href="#">Fashion</a>
+            <a href="#">Home</a>
+            <a href="#">Beauty</a>
+            <a href="#">Today's Deals</a>
+            <a href="#">Best Sellers</a>
 
-        <a href="#">
-            Electronics
-        </a>
-
-        <a href="#">
-            Fashion
-        </a>
-
-        <a href="#">
-            Home
-        </a>
-
-        <a href="#">
-            Beauty
-        </a>
-
-        <a href="#">
-            Today's Deals
-        </a>
-
-        <a href="#">
-            Best Sellers
-        </a>
+        </div>
 
     </div>
 
+</div>
 </header>
      <section class="hero">
         <div class="hero-content">
@@ -547,6 +529,15 @@
     </div>
 
 </footer>
+
+<script>
+const departmentBtn = document.getElementById("departmentBtn");
+const departmentList = document.getElementById("departmentList");
+
+departmentBtn.addEventListener("click", function () {
+    departmentList.classList.toggle("show");
+});
+</script>
     
  
 </body>
